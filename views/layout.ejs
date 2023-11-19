@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Txt Thread: Home</title>
+</head>
+<body>
+
+  Hello World
+  <button id="sample" onclick="loadData()">Click Me</button>
+  <div id="result"></div>
+  
+</body>
+
+<script src="/js/jquery.js"></script>
+<script>
+
+async function loadData() {
+  
+  await $.ajax({
+    url: "/data",
+    method: "GET",
+    success: (data) => {
+
+      $("#result").html(data);
+
+    },
+    error: (xhr, status, err) => {
+
+      console.error(status);
+
+    }
+  })
+
+}
+
+</script>
+
+</html>
