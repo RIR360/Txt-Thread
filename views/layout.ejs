@@ -4,12 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Txt Thread: Home</title>
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
 
-  Hello World
-  <button id="sample" onclick="loadData()">Click Me</button>
-  <div id="result"></div>
+  <div class="m-4">
+    <div id="data">
+      <%- include("common/card.ejs", {
+        name: "Rizvy",
+        phone: "01403074985"
+      }) %>
+    </div>
+    <div class="my-2">
+      <button href="#" class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+        Go Left
+      </button>
+      <button href="#" class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+        Go Right
+      </button>
+    </div>
+  </div>
   
 </body>
 
