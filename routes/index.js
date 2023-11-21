@@ -2,6 +2,35 @@ require("dotenv").config();
 const express = require('express');
 const app = express.Router();
 
+let index = 0;
+const data = [
+  {
+    name: "Touhid",
+    phone: "09340934",
+    image: "https://i.gifer.com/237.gif"
+  },
+  {
+    name: "Rizvy",
+    phone: "04309342",
+    image: "https://media4.giphy.com/media/NG6nBdv9Ba0ONYLBsx/giphy.gif"
+  },
+  {
+    name: "Rahin",
+    phone: "04309342",
+    image: "https://media1.giphy.com/media/Lm5xjVY7wxE9lgAbzN/giphy.gif"
+  },
+  {
+    name: "Siam",
+    phone: "023249342",
+    image: "https://media.tenor.com/DYzUq3uX1QgAAAAC/tom-and-jerry-evil.gif"
+  },
+  {
+    name: "Noyon",
+    phone: "023249342",
+    image: "https://memeadda.com/uploads/memes/funny-cat-tom-1621926684.gif"
+  }
+]
+
 app.get("/", (req, res, next) => {
 
   try {
@@ -16,26 +45,26 @@ app.get("/", (req, res, next) => {
 
 });
 
-app.get("/data", (req, res, next) => {
+app.get("/user", (req, res, next) => {
 
   try {
 
-    const data = [
-      {
-        name: "Touhid",
-        phone: "09340934"
-      },
-      {
-        name: "Rizvy",
-        phone: "04309342"
-      },
-      {
-        name: "Rahin",
-        phone: "04309342"
-      }
-    ]
+    const movement = req.query.move;
+    const data_len = data.length;
+
+    if (movement === 'right') {
+
+      index++;
+
+    } else {
+
+      index--;
+
+    }
+
+    console.log()
     
-    return res.render("common/users", { data });
+    return res.render("common/card", { ...data[index % data_len] });
 
   } catch (err) {
 
