@@ -31,6 +31,18 @@ const data = [
   }
 ]
 
+app.get("/404", (req, res, next) => {
+
+  res.render("pages/404");
+
+})
+
+app.get("/register", (req, res, next) => {
+
+  res.render("pages/register");
+
+})
+
 app.get("/", (req, res, next) => {
 
   try {
