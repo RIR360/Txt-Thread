@@ -7,39 +7,30 @@
   <link rel="stylesheet" href="/css/styles.css">
   <link rel="stylesheet" href="/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="/css/global.css">
+  <script src="/js/play-tailwind.js"></script>
   <script src="/js/jquery.js"></script>
 </head>
 <body>
 
-  <div class="m-4">
-    <div id="data">
-    </div>
-    <div class="my-2">
-      <button onclick="loadUser('left')" class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-        <i class="fa fa-arrow-left"></i>
-        Go Left 
-      </button>
-      <button onclick="loadUser('right')" class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-        Go Right 
-        <i class="fa fa-arrow-right"></i>
-      </button>
-    </div>
-  </div>
+  <main id="content">
+  </main>
   
 </body>
 
 <script>
 
-loadUser('right');
+redirect("/register");
 
-async function loadData() {
-  
-  await $.ajax({
-    url: "/data",
+const $main_container = $("#content");
+
+async function redirect(url) {
+
+  return $.ajax({
+    url,
     method: "GET",
     success: (data) => {
 
-      $("#result").html(data);
+      $main_container.html(data);
 
     },
     error: (xhr, status, err) => {
@@ -48,7 +39,7 @@ async function loadData() {
 
     }
   })
-
+  
 }
 
 async function loadUser(move) {
