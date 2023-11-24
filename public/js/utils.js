@@ -5,7 +5,15 @@ async function redirect(url) {
     method: "GET",
     success: (data) => {
 
-      $main_container.html(data);
+      if (data.status === "error") {
+
+        console.log(data);
+
+      } else {
+
+        $main_container.html(data);
+
+      }
 
     },
     error: (xhr, status, err) => {
