@@ -37,9 +37,9 @@ app.get("/home", (req, res, next) => {
 
 })
 
-app.get("/404", (req, res, next) => {
+app.get("/chat/lists", (req, res, next) => {
 
-  res.render("pages/404");
+  res.render("pages/chat-list");
 
 })
 
@@ -107,11 +107,7 @@ app.use((err, req, res, next) => {
 
   if (err.status === 404) {
 
-    return res.json({
-      code: 404,
-      status: "error",
-      message: "404 page not found"
-    });
+    res.render("pages/404");
 
   }
 
