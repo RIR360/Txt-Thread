@@ -43,6 +43,12 @@ app.get("/chat/lists", (req, res, next) => {
 
 })
 
+app.get("/login", (req, res, next) => {
+
+  res.render("pages/login");
+
+})
+
 app.get("/register", (req, res, next) => {
 
   res.render("pages/register");
