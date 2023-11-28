@@ -1,17 +1,13 @@
 <section class="flex justify-center items-center h-full">
 
-  <div>
+  <div class="text-center">
 
-    <span class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
-      <img class="w-10 h-10 mr-2" src="/img/txt-thread-logo.png" alt="logo">
-      Txt Thread
-    </span>
-
-    <div class="text-center mb-4">
-      <%- include("../common/loader.ejs") %>
+    <div class="flex justify-center mb-4">
+      <%- include("../utility/logo.ejs") %>
     </div>
-
     <%- include("../utility/button.ejs", { value: "Start", url: "/chat/lists" }) %>
+    <%- include("../utility/button.ejs", { value: "Wrong", url: "/hello" }) %>
+    <%- include("../utility/button.ejs", { value: "Error", url: "/error" }) %>
 
   </div>
 
