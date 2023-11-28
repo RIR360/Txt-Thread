@@ -1,9 +1,13 @@
+<%
+let user_data = typeof data !== "undefined" ? data : [];
+%>
+
 <section class="">
 
-  <span onclick="redirect('/home')" class="flex items-center my-6 text-2xl font-semibold text-gray-900 dark:text-white">
-    <img class="w-10 h-10 mr-2" src="/img/txt-thread-logo.png" alt="logo">
-    Txt Thread
-  </span>
+  <div onclick="redirect('/home')" class="mb-4">
+    <%- include("../utility/logo.ejs") %>
+  </div>
+
   <form>
     <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
     <div class="relative">
@@ -17,9 +21,9 @@
 
   <div class="py-3">
 
-    <% for( let index = 0; index < 20; index++ ) { %>
-      <%- include("../common/chat")%>
-    <% } %>
+    <% user_data.forEach(data => { %>
+      <%- include("../common/chat", data)%>
+    <% }) %>
 
   </div>
 
