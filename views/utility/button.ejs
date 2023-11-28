@@ -1,1 +1,7 @@
-<button onclick="redirect('<%= url %>')" class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"><%= value %></button>
+<% 
+let redirect_url = typeof url !== "undefined" ? url : "";
+let button_text = typeof value !== "undefined" ? value : "Button";
+%>
+<button onclick="redirect('<%= redirect_url %>')" class="w-full text-white bg-primary hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 border-gray-400 hover:border-teal-500 border-3">
+  <%= button_text %>
+</button>
