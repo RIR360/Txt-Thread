@@ -5,27 +5,27 @@ const app = express.Router();
 let index = 0;
 const data = [
   {
-    name: "Touhid",
+    name: "Touhid Jomaddar",
     phone: "09340934",
     image: "https://i.gifer.com/237.gif"
   },
   {
-    name: "Rizvy",
+    name: "Rizvy Islam",
     phone: "04309342",
     image: "https://media4.giphy.com/media/NG6nBdv9Ba0ONYLBsx/giphy.gif"
   },
   {
-    name: "Rahin",
+    name: "Rahin Zaman",
     phone: "04309342",
     image: "https://media1.giphy.com/media/Lm5xjVY7wxE9lgAbzN/giphy.gif"
   },
   {
-    name: "Siam",
+    name: "Arafat Siam DJ",
     phone: "023249342",
     image: "https://media.tenor.com/DYzUq3uX1QgAAAAC/tom-and-jerry-evil.gif"
   },
   {
-    name: "Noyon",
+    name: "Imran Hosen Noyon",
     phone: "023249342",
     image: "https://memeadda.com/uploads/memes/funny-cat-tom-1621926684.gif"
   }
@@ -39,7 +39,7 @@ app.get("/home", (req, res, next) => {
 
 app.get("/chat/lists", (req, res, next) => {
 
-  res.render("pages/chat-list");
+  res.render("pages/chat-list", { data });
 
 })
 
@@ -98,6 +98,12 @@ app.get("/user", (req, res, next) => {
 
 });
 
+// manual error point
+app.get("/error", (req, res, next) => {
+
+  res.render("pages/error");
+
+})
 
 // must be at the bottom for not found page
 app.use((req, res, next) => {
@@ -124,7 +130,7 @@ app.use((err, req, res, next) => {
       // database error
       console.error(err);
 
-      return res.json({
+      return res.render("pages/error", {
         code: err.code,
         status: "error",
         message: err.toString()
@@ -135,7 +141,7 @@ app.use((err, req, res, next) => {
       // internal esrver error
       console.error(err);
 
-      return res.json({
+      return res.render("pages/error", {
         status: "error",
         message: err.toString()
       });
