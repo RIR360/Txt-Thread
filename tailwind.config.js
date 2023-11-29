@@ -4,7 +4,10 @@ module.exports = {
     "./views/**/*.ejs",
   ],
   theme: {
-    extend: {},
+    colors: {
+      primary: '#26b88b',
+      secondary: '#3c4240'
+    },
   },
   plugins: [
     require('postcss-import'),

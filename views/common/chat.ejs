@@ -1,7 +1,11 @@
-<div class="flex my-3 hover:bg-gray-700 rounded p-3">
-  <img class="rounded-full w-10 h-10" src="https://media4.giphy.com/media/NG6nBdv9Ba0ONYLBsx/giphy.gif" alt="profile picture">
+<%
+let user_image = typeof image !== "undefined" ? image : "";
+let user_name = typeof name !== "undefined" ? name : "Username";
+%>
+<div class="flex my-3 hover:bg-gray-700 rounded p-3 border-b-2 border-gray-500">
+  <img class="rounded-full w-10 h-10" src="<%= user_image %>" alt="profile picture">
   <div class="dark:text-white ms-3">
-      <div>Rejwan Islam Rizvy</div>
-      <div class="text-sm text-gray-500 dark:text-gray-400">You: Are you coding right now?</div>
+      <div><%= user_name %></div>
+      <div class="text-sm text-gray-500 dark:text-gray-400">Say Hi!</div>
   </div>
 </div> 
