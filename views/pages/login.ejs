@@ -1,7 +1,33 @@
-<section class="">
+<section class="login_section p-1 text-gray-50 flex items-center justify-center h-screen">
   <!-- html here -->
+      <div class="login_card p-4 pl-3 pr-3 rounded-lg border border-slate-400 sm:p-5">
+        <div class="">
+          <span class="flex flex-col items-center justify-center p-3 text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white sm:flex sm:flex-row sm:items-center sm:gap-2">
+            <img class="w-10 h-10 sm:w-12 sm:h-12" src="/img/txt-thread-logo.png" alt="logo">
+            Txt Thread
+          </span>  
+        </div>
+        <h1 class="text-3xl text-center sm:text-4xl">Welcome Back!</h1>
+        <p class="text-sm text-[#b1b1b1] text-center sm:text-lg">We're so excited to see you again!</p>
+        <!-- form here -->
+        <form action="#" class="mt-4 mb-4 box-border">
+          <div>
+            <label class="text-[15px] sm:text-base" for="email">Your Email</label>
+            <input class="w-full mt-3 mb-3 outline-none p-1.5 pl-2 pr-2 bg-slate-200 text-black rounded sm:p-2 sm:text-base" type="email" name="email" placeholder="email"  required/>
+          </div>
+          <div>
+            <label class="text-[15px] sm:text-base" for="password">Password</label>
+            <input class="w-full mt-3 mb-3 outline-none p-1.5 pl-2 pr-2 bg-slate-200 text-black rounded sm:p-2 sm:text-base" type="password" name="password" placeholder="password" required/>
+          </div>
+          <button class="w-full bg-emerald-700 outline-none p-1.5 sm:p-2 mt-3 mb-3 rounded duration-150 hover:bg-emerald-900 hover:text-slate-300 ">Login</button>
+          <span class="text-[15px] sm:text-base mt-2 block">
+            <button class="text-[#b1b1b1] hover:opacity-60" onclick="redirect('/register')">Register or create</button>
+            an account
+          </span>
+        </form>
+      </div>
 </section>
 
 <script>
-  // js code here  
+  // js code here
 </script>

@@ -1,3 +1,9 @@
+:root {
+  /* ========== colors ==========*/
+  --primary-color : #0c2020;
+  --shadow : #071313;
+  --secondary-color: #10B981;
+}
 #content {
   background: radial-gradient(circle at top, rgb(10, 30, 30), rgb(5, 10, 10));
   position: absolute;
@@ -6,6 +12,19 @@
   overflow: auto;
   padding: 1rem;
 }
+
+/* ============ Login Section ========== */
+.login_card {
+  background: var(--primary-color);
+  box-shadow: 0 0 25px #071313;
+
+}
+/* ============ Register Section */
+.register_card {
+  background: var(--primary-color);
+  box-shadow: 0 0 25px #071313;
+}
+
 .center-screen {
   position: absolute;
   left: 50%;
