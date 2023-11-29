@@ -1,0 +1,14 @@
+<%
+let input_type = typeof type !== "undefined" ? type : "text";
+let input_name = typeof name !== "undefined" ? name : "";
+let input_value = typeof value !== "undefined" ? value : "";
+let input_placeholder = typeof placeholder !== "undefined" ? placeholder : "Input here...";
+%>
+<input 
+  class="w-full mb-3 p-2 bg-slate-100 text-[#0b1e1e] rounded sm:text-base" 
+  type="<%= input_type %>" 
+  name="<%= input_name %>" 
+  placeholder="<%= input_placeholder %>"
+  value="<%= input_value %>"
+  required
+/>
